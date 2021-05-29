@@ -1,0 +1,7 @@
+project(ALGORITHM-LEARN)
+cmake_minimum_required(VERSION 3.0)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -O2 -Wall")
+include_directories(./include ./test)
+aux_source_directory(./src SRC_LIB)
+aux_source_directory(./test SRC_TEST)
+add_executable(main main.cpp ${SRC_LIB} ${SRC_TEST})
