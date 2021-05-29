@@ -8,5 +8,7 @@
 void testLinkList();
 void testStackLinkList();
 void testStackArray();
+void testQueueArray();
+void testQueueLinkList();
 
 #endif // ALGORITHM_LEARN_TEST_H
