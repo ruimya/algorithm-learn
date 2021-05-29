@@ -5,6 +5,6 @@
 #include "test/test.h"
 
 int main() {
-  testQueueLinkList();
+  testStackLinkList();
   return 0;
 }

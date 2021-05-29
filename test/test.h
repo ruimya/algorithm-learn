@@ -10,5 +10,6 @@ void testStackLinkList();
 void testStackArray();
 void testQueueArray();
 void testQueueLinkList();
+void testStaticList();
 
 #endif // ALGORITHM_LEARN_TEST_H
