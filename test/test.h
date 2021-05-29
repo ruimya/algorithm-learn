@@ -6,5 +6,7 @@
 #define ALGORITHM_LEARN_TEST_H
 
 void testLinkList();
+void testStackLinkList();
+void testStackArray();
 
 #endif // ALGORITHM_LEARN_TEST_H

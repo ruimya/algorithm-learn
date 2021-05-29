@@ -5,6 +5,6 @@
 #include "test/test.h"
 
 int main() {
-  testLinkList();
+  testStackLinkList();
   return 0;
 }
