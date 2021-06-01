@@ -76,7 +76,7 @@ template <class T> STATUS LinkList<T>::Append(T elem) {
   tail->next = node;
   tail = node;
   len++;
-  return SUCCESS;
+  return OK;
 }
 
 // 新增元素 头插法
@@ -86,13 +86,11 @@ template <class T> STATUS LinkList<T>::Insert(T elem) {
   node->next = head->next;
   head->next = node;
   len++;
-  return SUCCESS;
+  return OK;
 }
 
 // 插入元素
-template <class T> STATUS LinkList<T>::Insert(int loc, T elem) {
-  return SUCCESS;
-}
+template <class T> STATUS LinkList<T>::Insert(int loc, T elem) { return OK; }
 
 // 打印链表（无头结点）
 template <class T> void LinkList<T>::Print() {
@@ -172,7 +170,7 @@ template <class T> STATUS LinkList<T>::Delete(int loc) {
     tail = p;
 
   len--;
-  return 0;
+  return OK;
 }
 
 template <class T> void LinkList<T>::Sort() {}

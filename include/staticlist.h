@@ -19,7 +19,7 @@ private:
   size_t cap, len;    // 容量, 长度
   Component<T> *data; // 静态链表数组
   int pback, pdata;   //  备用链表头索引, 数据链表头索引
-  int tail;           // 数据链表尾指针（头指针=Data[pdata].cur）
+  int tail;           // 数据链表尾指针（头指针=Keys[pdata].cur）
 
 public:
   explicit StaticList(size_t size);
@@ -97,7 +97,7 @@ template <class T> STATUS StaticList<T>::Append(T elem) {
   // 更新尾指针
   tail = avail;
   len++;
-  return SUCCESS;
+  return OK;
 }
 
 // 插入元素（第一个位置）
@@ -126,7 +126,7 @@ template <class T> STATUS StaticList<T>::Insert(T elem) {
   data[pdata].cur = avail;
 
   len++;
-  return SUCCESS;
+  return OK;
 }
 
 // 删除元素
@@ -157,7 +157,7 @@ template <class T> STATUS StaticList<T>::Delete(int loc) {
   data[pback].cur = t;
 
   len--;
-  return SUCCESS;
+  return OK;
 }
 
 template <class T> void StaticList<T>::Clear() {
@@ -170,15 +170,14 @@ template <class T> void StaticList<T>::Clear() {
   len = 0;
 }
 
-template <class T> STATUS StaticList<T>::Insert(int loc, T elem) {
-  return false;
-}
+template <class T> STATUS StaticList<T>::Insert(int loc, T elem) { return OK; }
 
 template <class T> int StaticList<T>::Find(T elem) { return -1; }
 
 template <class T> bool StaticList<T>::IsEmpty() {
   return data[pdata].cur == 0;
 }
+
 template <class T> T *StaticList<T>::Index(int loc) { return nullptr; }
 
 #endif // ALGORITHM_LEARN_STATICLIST_H

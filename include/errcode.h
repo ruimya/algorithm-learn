@@ -5,16 +5,44 @@
 #ifndef ALGORITHM_LEARN_ERRCODE_H
 #define ALGORITHM_LEARN_ERRCODE_H
 
-// 基本错误定义
-#define SUCCESS 0
-#define ERROR 1
+#define IN
+#define OUT
+#define LEN_ARRAY(a) ((int)(sizeof(a) / sizeof(a[0])))
 
-// 具体错误定义
-#define ERR_EMTPY 100001
-#define ERR_FULL 100002
-#define ERR_OUT_OF_RANGE 100003
+// 错误码定义
+typedef enum {
+  OK = 0,
+  ERROR = 1,
+  ERR_NULL,
+  ERR_DUPLICATE,
+  ERR_NOT_EXIST,
+  ERR_EMTPY,
+  ERR_FULL,
+  ERR_OUT_OF_RANGE,
+  ERR_MALLOC,
+} STATUS;
 
-// 状态定义
-typedef unsigned int STATUS;
+// 输出信息
+#define LOG_INFO(format, ...) printf(format, ##__VA_ARGS__)
+
+// 输出数组
+#define LOG_ARRAY(array)                                                       \
+  {                                                                            \
+    int len = sizeof(array) / sizeof(array[0]);                                \
+    for (int i = 0; i < len; i++) {                                            \
+      printf("%d\t", array[i]);                                                \
+    }                                                                          \
+    printf("\n");                                                              \
+  }
+
+// 调试模式
+#ifdef DEBUG
+#define LOG_DEBUG(format, ...) printf(format, ##__VA_ARGS__)
+#define LOG_DEBUGF(format, ...)                                                \
+  printf("FILE: %s, LINE: %d: " format, __FILE__, __LINE__, ##__VA_ARGS__);
+#else
+#define LOG_DEBUG(format, ...)
+#define LOG_DEBUGF(format, ...)
+#endif
 
 #endif // ALGORITHM_LEARN_ERRCODE_H

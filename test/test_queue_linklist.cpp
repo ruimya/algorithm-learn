@@ -9,23 +9,34 @@ using namespace std;
 void testQueueLinkList() {
   QueueLinkList<int> q;
 
-  cout << "入队1: " << q.Push(1) << endl;
-  cout << "入队2: " << q.Push(2) << endl;
-  cout << "入队3: " << q.Push(3) << endl;
+  q.Push(1);
+  q.Push(2);
+  q.Push(3);
 
-  cout << "打印队列: ";
   q.Print();
-
-  cout << "队列长度: " << q.Len() << endl;
+  cout << ">> 队列长度 " << q.Len() << endl;
 
   int out;
-  cout << "出队: " << q.Pop(out) << " " << out << endl;
-  cout << "入队3: " << q.Push(3) << endl;
+  STATUS status;
 
-  cout << "打印队列: ";
+  status = q.Pop(out);
+  cout << ">> 出队元素 " << (status ? -1 : out) << endl;
+  cout << ">> 队列长度 " << q.Len() << endl;
+
+  status = q.Pop(out);
+  cout << ">> 出队元素 " << (status ? -1 : out) << endl;
+  cout << ">> 队列长度 " << q.Len() << endl;
+
+  status = q.Pop(out);
+  cout << ">> 出队元素 " << (status ? -1 : out) << endl;
+
+  status = q.Pop(out);
+  cout << ">> 出队元素 " << (status ? -1 : out) << endl;
+
   q.Print();
 
-  cout << "出队: " << q.Pop(out) << " " << out << endl;
-  cout << "出队: " << q.Pop(out) << " " << out << endl;
-  cout << "是否为空: " << q.IsEmpty() << endl;
+  q.Push(3);
+  q.Clear();
+  q.Print();
+  cout << ">> 队列长度 " << q.Len() << endl;
 }

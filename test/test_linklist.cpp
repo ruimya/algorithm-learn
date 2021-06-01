@@ -21,12 +21,12 @@ void testLinkList() {
   l.Append(3);
   l.Print();
 
-  if (l.Delete(2) != SUCCESS)
+  if (l.Delete(2) != OK)
     cout << "FAIL" << endl;
 
   cout << "Len: " << l.Len() << endl;
 
-  if (l.Delete(0) != SUCCESS)
+  if (l.Delete(0) != OK)
     cout << "FAIL" << endl;
 
   l.Print();

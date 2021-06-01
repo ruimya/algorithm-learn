@@ -5,6 +5,6 @@
 #include "test/test.h"
 
 int main() {
-  testString();
+  testBTree();
   return 0;
 }

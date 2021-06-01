@@ -47,7 +47,7 @@ template <class T> STATUS QueueArray<T>::Push(T elem) {
   }
   data[rear] = elem;
   rear = ++rear % cap;
-  return SUCCESS;
+  return OK;
 }
 
 template <class T> STATUS QueueArray<T>::Pop(T &elem) {
@@ -58,7 +58,7 @@ template <class T> STATUS QueueArray<T>::Pop(T &elem) {
   }
   elem = data[front];
   front = ++front % cap;
-  return SUCCESS;
+  return OK;
 }
 
 template <class T> size_t QueueArray<T>::Len() {
